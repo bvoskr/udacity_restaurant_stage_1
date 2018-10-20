@@ -76,7 +76,7 @@ fetchRestaurantFromURL = (callback) => {
   }
 }
 
-/**
+/*
  * Create restaurant HTML and add it to the webpage
  */
 fillRestaurantHTML = (restaurant = self.restaurant) => {
@@ -106,9 +106,13 @@ fillRestaurantHTML = (restaurant = self.restaurant) => {
   fillReviewsHTML();
 }
 
-/**
+/*
  * Create restaurant operating hours HTML table and add it to the webpage.
  */
+/*
+I deliberately left individual reviews out of accesibility scope,
+considering this info non-critical, unlike address/schedule/cuisine type
+*/
 fillRestaurantHoursHTML = (operatingHours = self.restaurant.operating_hours) => {
   const hours = document.getElementById('restaurant-hours');
   hours.setAttribute('tabindex', '0');
