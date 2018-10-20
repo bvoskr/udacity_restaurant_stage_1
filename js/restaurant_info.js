@@ -76,7 +76,7 @@ fetchRestaurantFromURL = (callback) => {
   }
 }
 
-/*
+/**
  * Create restaurant HTML and add it to the webpage
  */
 fillRestaurantHTML = (restaurant = self.restaurant) => {
@@ -106,13 +106,9 @@ fillRestaurantHTML = (restaurant = self.restaurant) => {
   fillReviewsHTML();
 }
 
-/*
+/**
  * Create restaurant operating hours HTML table and add it to the webpage.
  */
-/*
-I deliberately left individual reviews out of accesibility scope,
-considering this info non-critical, unlike address/schedule/cuisine type
-*/
 fillRestaurantHoursHTML = (operatingHours = self.restaurant.operating_hours) => {
   const hours = document.getElementById('restaurant-hours');
   hours.setAttribute('tabindex', '0');
@@ -168,10 +164,14 @@ createReviewHTML = (review) => {
 
   const rating = document.createElement('p');
   rating.innerHTML = `Rating: ${review.rating}`;
+  rating.setAttribute('aria-label', `${review.name}'s rating`);
+  rating.setAttribute('tabindex', '0');
   li.appendChild(rating);
 
   const comments = document.createElement('p');
   comments.innerHTML = review.comments;
+  comments.setAttribute('aria-label', `${review.name}'s review`);
+  comments.setAttribute('tabindex', '0');
   li.appendChild(comments);
 
   return li;
@@ -202,4 +202,3 @@ getParameterByName = (name, url) => {
     return '';
   return decodeURIComponent(results[2].replace(/\+/g, ' '));
 }
-
