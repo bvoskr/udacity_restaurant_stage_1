@@ -48,6 +48,7 @@ article, aside, canvas, details, figcaption, figure, footer, header, hgroup, men
   text-align: center;
   text-transform: uppercase;
   width: 100%;
+  box-sizing: border-box; /* removing left/right paddings will also do */
 }
 /* ====================== Navigation ====================== */
 nav:not(.breadcrumb-wrap) {
@@ -133,10 +134,12 @@ nav:not(.breadcrumb-wrap) h1 a {
   background-color: #f3f3f3;
   margin: 0;
   padding: 30px 15px 60px;
-  display: table;
-  margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
 }
-#restaurants-list li {
+
+#restaurants-list div {
   background-color: #fff;
   border: 2px solid #ccc;
   font-family: Arial,sans-serif;
@@ -148,10 +151,10 @@ nav:not(.breadcrumb-wrap) h1 a {
   background-color: #ccc;
   display: block;
   margin: 0;
-  max-width: 640px;
+  max-width: 320px;
   width: 100%;
 }
-#restaurants-list li h1 {
+#restaurants-list div h1 {
   color: #f18200;
   font-family: Arial,sans-serif;
   font-size: 14pt;
@@ -165,7 +168,7 @@ nav:not(.breadcrumb-wrap) h1 a {
   margin: 0;
   font-size: 11pt;
 }
-#restaurants-list li a {
+#restaurants-list div a {
   background-color: orange;
   border-bottom: 3px solid #eee;
   color: #fff;
