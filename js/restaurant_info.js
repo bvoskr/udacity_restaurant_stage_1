@@ -203,3 +203,24 @@ getParameterByName = (name, url) => {
     return '';
   return decodeURIComponent(results[2].replace(/\+/g, ' '));
 }
+
+
+// Dear reviewer!
+// How needed is it to register SW on restaurants page as well?
+// I imagined that SW registered from main (index) page would handle 
+// fetch requests for the restaurants page as well.
+
+// Any further feedback/comments on it are greatly appreciated!
+// Regards,
+// Boris.
+
+// registering Service Worker
+if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('sw.js')
+  .then(function(registration) {
+    console.log('[ServiceWorker] Registration successful, scope is:', registration.scope);
+  })
+  .catch(function(error) {
+    console.log('[ServiceWorker] Registration failed, error:', error);
+  });
+}
