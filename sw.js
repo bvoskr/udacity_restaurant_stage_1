@@ -1,5 +1,5 @@
 const currCacheName = 'restaurantsSite01';
-const filesToCache = ['index.html', 'restaurant.html', '/', '/js/main.js', '/js/restaurant_info.js', '/js/dbhelper.js', '/css/styles.css', '/data/restaurants.json'];
+const filesToCache = ['/', '/index.html', '/restaurant.html', '/js/main.js', '/js/restaurant_info.js', '/js/dbhelper.js', '/css/styles.css', '/data/restaurants.json'];
 for (let i = 1; i < 11; i++) {
 	filesToCache.push(`/img/${i}.jpg`);
 }
